@@ -1,0 +1,13 @@
+gamma = 3:
+Bild wird abgedunkelt
+Niedrige Eingaben [0,0.5] werden gestaucht [0,0.2]
+Hohe Eingaben [0.8,1] werden gespreizt [0.5,1]
+
+gamma = 1:
+kein Effekt
+T(I) = I
+
+gamma = 0.3:
+Bild wird aufgehellt	
+Niedrige Eingaben [0,0.2] werden gespreizt [0,0.6]
+Hohe Eingaben [0.5,1] werden gestaucht [0.8,1]	

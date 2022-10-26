@@ -1,0 +1,69 @@
+\section{Signal-to-noise ratio}
+\begin{enumerate}
+	\setlength\itemsep{2em}
+	\item $\begin{aligned}[t]
+			      \sigma^2= \frac{1}{|B|-1} \cdot \sum_{p \in B}{\left( I(p)-I^\prime \right) ^2}
+		      \end{aligned}$\\
+
+	      \begin{description}
+		      \setlength\itemsep{1em}
+		      \item{$\mathbf{I}_1$:}
+		      $\begin{aligned}[t]
+				      B_1                & =                 \{50,50,75,75\} \text{ und }  I^\prime = 75       \\
+				      \implies  \sigma^2 & = \frac{1}{4-1} \cdot \left( 2 \cdot (-25)^2 + 2 \cdot 0^2  \right) \\
+				                         & = \frac{1250}{3} \approx 416.67
+			      \end{aligned}$\\
+
+		      \item{$\mathbf{I}_2$:}
+		      $\begin{aligned}[t]
+				      B_2                & =                 \{75,75,100,100\} \text{ und }  I^\prime = 75  \\
+				      \implies  \sigma^2 & = \frac{1}{4-1} \cdot \left( 2 \cdot 25^2 + 2 \cdot 0^2  \right) \\
+				                         & = \frac{1250}{3} \approx 416.67
+			      \end{aligned}$
+	      \end{description}
+
+	\item $\begin{aligned}[t]
+			      \text{SNR}_{max}(\mathbf{I}) & = \frac{I_{maxGiven}}{\sigma} \\
+			      \text{SNR}_{avg}(\mathbf{I}) & = \frac{m_\mathbf{I}}{\sigma}
+		      \end{aligned}$\\
+
+	      \begin{description}
+		      \setlength\itemsep{1em}
+		      \item{$\mathbf{I}_1$:}
+		      $\begin{aligned}[t]
+				      \text{SNR}_{max}(\mathbf{I}_1) & = \frac{230}{\sqrt{\frac{1250}{3}}} \approx 11.28   \\
+				      \text{SNR}_{avg}(\mathbf{I}_1) & = \frac{178.75}{\sqrt{\frac{1250}{3}}} \approx 8.76
+			      \end{aligned}$\\
+
+		      \item{$\mathbf{I}_2$:}
+		      $\begin{aligned}[t]
+				      \text{SNR}_{max}(\mathbf{I}_2) & = \frac{255}{\sqrt{\frac{1250}{3}}} \approx 12.49   \\
+				      \text{SNR}_{avg}(\mathbf{I}_2) & = \frac{203.75}{\sqrt{\frac{1250}{3}}} \approx 9.98
+			      \end{aligned}$
+	      \end{description}
+
+	\item $\begin{aligned}[t]
+			      \text{SNR}_{obj}(\mathbf{I}) & = \frac{\left| m_{\mathbf{I} \setminus B} - m_B \right|}{\sigma}
+		      \end{aligned}$\\
+
+	      \begin{description}
+		      \setlength\itemsep{1em}
+		      \item{$\mathbf{I}_1$:}
+		      $\begin{aligned}[t]
+				      \text{SNR}_{obj}(\mathbf{I_1})
+				       & = \frac{\left|  \frac{6\cdot(205 + 230) }{12}
+					      - \frac{ 2\cdot(50+75)  }{4}
+				      \right|}{\sqrt{\frac{1250}{3}}}                  \\
+				       & \approx 7.59
+			      \end{aligned}$\\
+
+		      \item{$\mathbf{I}_2$:}
+		      $\begin{aligned}[t]
+				      \text{SNR}_{obj}(\mathbf{I_2})
+				       & = \frac{\left|  \frac{6\cdot(230 + 255) }{12}
+					      - \frac{ 2\cdot(75+100)}{4}
+				      \right|}{\sqrt{\frac{1250}{3}}}                  \\
+				       & \approx 7.59
+			      \end{aligned}$
+	      \end{description}
+\end{enumerate}

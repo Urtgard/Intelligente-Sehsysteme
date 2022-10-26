@@ -1,0 +1,33 @@
+\section{ImageToolBox: Gamma-Korrektur}
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item Eine Gamma-Korrektur mit $\gamma=3$ dunkelt das Bild ab. \\
+	      Der Verlauf der Korrekturfunktion zeigt, dass niedrige Intensitätswerte gestaucht werden: $[0,0.5] \rightarrow [0,0.2]$\\
+	      Hohe Intensitätswerte werden gespreizt: $[0.8,1] \rightarrow [0.5,1]$ \\
+
+	      Eine Gamma-Korrektur mit $\gamma=1$ hat keinen Effekt. \\
+	      Der Verlauf der Korrekturfunktion zeigt, dass jeder Intensitätswert unverändert bleibt: $T_\gamma(I)=I$ \\
+
+	      Eine Gamma-Korrektur mit $\gamma=0.3$ hellt das Bild auf. \\
+	      Der Verlauf der Korrekturfunktion zeigt, dass niedrige Intensitätswerte gespreizt werden: $[0,0.2] \rightarrow [0,0.6]$\\
+	      Hohe Intensitätswerte werden gestaucht: $[0.5,1] \rightarrow [0.8,1]$
+\end{enumerate}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.99\linewidth]{A1/gamma=3.png}
+		\caption{$\gamma=3$}
+	\end{subfigure}
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.99\linewidth]{A1/gamma=1.png}
+		\caption{$\gamma=1$}
+	\end{subfigure}
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.99\linewidth]{A1/gamma=0.3.png}
+		\caption{$\gamma=0.3$}
+	\end{subfigure}
+\end{figure}
