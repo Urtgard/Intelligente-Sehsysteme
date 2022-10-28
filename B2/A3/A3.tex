@@ -1,0 +1,41 @@
+\section{Mittelwertfilter und Binomialfilter}
+\begin{enumerate}
+	\setlength\itemsep{2em}
+	\item $\begin{aligned}[t]
+			      f(u,v) =\frac{1}{3} \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}
+		      \end{aligned}$\\
+
+	      $\begin{aligned}[t]
+			      (f\ast g)(2,1) & =\frac{1}{3} (1 \cdot 255 + 1 \cdot 255 + 1 \cdot 255 ) = 255 \\
+			      (f\ast g)(3,1) & =\frac{1}{3} (1 \cdot 255 + 1 \cdot 255 + 1 \cdot 0 ) = 170   \\
+			      (f\ast g)(4,1) & =\frac{1}{3} (1 \cdot 255 + 1 \cdot 0 + 1 \cdot 0 ) = 85      \\
+			      (f\ast g)(5,1) & =\frac{1}{3} (1 \cdot 0 + 1 \cdot 0 + 1 \cdot 0 ) = 0         \\
+			      \implies       & \begin{tabular}{ |c|c|c|c|c|c| }
+				                       \hline
+				                       255 & 255 & 170 & 85 & 0 & 0 \\
+				                       \hline
+			                       \end{tabular}
+		      \end{aligned}$
+
+	\item $\begin{aligned}[t]
+			      f(u,v) =\frac{1}{4} \begin{pmatrix} 1 & 2 & 1 \end{pmatrix}
+		      \end{aligned}$\\
+
+	      $\begin{aligned}[t]
+			      (f\ast g)(2,1) & =\frac{1}{3} (1 \cdot 255 + 2 \cdot 255 + 1 \cdot 255 ) = 255     \\
+			      (f\ast g)(3,1) & =\frac{1}{3} (1 \cdot 255 + 2 \cdot 255 + 1 \cdot 0 ) \approx 191 \\
+			      (f\ast g)(4,1) & =\frac{1}{3} (1 \cdot 255 + 2 \cdot 0 + 1 \cdot 0 ) \approx 64    \\
+			      (f\ast g)(5,1) & =\frac{1}{3} (1 \cdot 0 + 2 \cdot 0 + 1 \cdot 0 ) = 0             \\
+			      \implies       & \begin{tabular}{ |c|c|c|c|c|c| }
+				                       \hline
+				                       255 & 255 & 191 & 64 & 0 & 0 \\
+				                       \hline
+			                       \end{tabular}
+		      \end{aligned}$
+
+	\item Die zentralen vier Pixel repräsentieren in der Eingabe die harte Kante zwischen 255 und 0.
+	      Durch die Filter wird dieser Übergang auf alle vier Pixel aufgeteilt
+	      und dadurch glätten die Filter die Kante.\\
+	      Die Glättung durch das Mittelwertfilter ($255 \rightarrow 170$ und $0 \rightarrow 85$) ist hierbei stärker
+	      als die Glättung durch das Binomialfilter ($255 \rightarrow 191$ und $0 \rightarrow 64$).
+\end{enumerate}
