@@ -1,4 +1,5 @@
 import itb2.filter.AbstractFilter;
+import itb2.filter.RequireImageType;
 import itb2.image.GrayscaleImage;
 import itb2.image.Image;
 import itb2.image.ImageFactory;
@@ -6,12 +7,13 @@ import itb2.image.ImageFactory;
 /**
  * Wendet die Gamma-Korrektur auf ein Grauwertbild an.
  *
- * @author Jan Konrad (2533619)
+ * @author Jan Konrad
  */
-public class B2A1 extends AbstractFilter {
+@RequireImageType(GrayscaleImage.class)
+public class B2A1_HW_JK_BK extends AbstractFilter {
     private static final String GAMMA = "Gamma";
 
-    public B2A1() {
+    public B2A1_HW_JK_BK() {
         properties.addDoubleProperty(GAMMA, 1);
     }
 
