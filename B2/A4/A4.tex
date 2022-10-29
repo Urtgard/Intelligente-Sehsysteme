@@ -1,0 +1,34 @@
+\section{Gauß-Filter}
+\begin{enumerate}
+	\setlength\itemsep{2em}
+	\item $\begin{aligned}[t]
+			      g(x,y) & = \frac{1}{2 \pi \sigma^2} \cdot e^{- \frac{x^2 + y^2}{2\sigma^2}} \\
+			      \sigma & = 0.3                                                              \\
+			      f(u,v) & =\frac{1}{\sum_u\sum_v g(u,v)} \begin{pmatrix}
+				                                              g(-1,1)  & g(0,1)  & g(1,1)  \\
+				                                              g(-1,0)  & g(0,0)  & g(1,0)  \\
+				                                              g(-1,-1) & g(0,-1) & g(1,-1)
+			                                              \end{pmatrix}        \\
+			             & \approx \frac{1}{1.79587} \begin{pmatrix}
+				                                         0.00003 & 0.00684 & 0.00003 \\
+				                                         0.00684 & 1.76839 & 0.00684 \\
+				                                         0.00003 & 0.00684 & 0.00003
+			                                         \end{pmatrix}
+		      \end{aligned}$
+	\item Bei der Berechnung von $(f\ast g)(x,y)$ werden $\Theta(w_{kernel} \cdot h_{kernel})$ Operationen benötigt.
+	      Für das gesamte Bild werden bei der Anwendung des normalen Filters
+	      $\Theta(N \cdot w_{kernel} \cdot h_{kernel})$ Operationen benötigt.\\
+
+	      Bei der Anwendung des separierten Filters werden einmal $\Theta(N \cdot w_{kernel})$
+	      und einmal  $\Theta(N \cdot h_{kernel})$ Operationen benötigt.\\
+	      Insgesamt werden also $\Theta(N (w_{kernel} + h_{kernel}))$ Operationen benötigt.
+
+	\item Je größer $m$ gewählt wird, desto größer ist die Umgebung, die beim Filtern betrachtet wird.
+	      Dementsprechend stärker ist die Glättung.\\
+	      Der Einfluss auf die Glättung nimmt dabei mit steigendem Abstand zum Zentrum ab.
+	      Bei $m=7$ betragen die Funktionswerte an den Ecken des Filterkerns nur 1 \% des Maximums der Gauß-Funktion.
+	      Bei $m=5$ sind es dagegen noch fast 14 \%.
+
+
+
+\end{enumerate}
