@@ -1,0 +1,31 @@
+\setcounter{section}{2}
+\section{Laplace-Operator}
+
+$\begin{aligned}[t]
+		\nabla ^ 2 f = \sum_{k=1}^n \frac{\partial^2 f}{\partial x^2_k}
+	\end{aligned}$
+
+\begin{enumerate}
+	\setlength\itemsep{2em}
+	\item
+	      $
+		      \begin{aligned}[t]
+			      f(x_1,x_2,x_3)                      & = x_1^2 + x_2^2 + x_3^3 \\
+			      \frac{\partial^2 f}{\partial x^2_1} &
+			      = \frac{\partial^2 f}{\partial x^2_2}
+			      = \frac{\partial^2 f}{\partial x^2_3} = 2                     \\
+			      \nabla ^ 2 f                        & = 2 + 2 + 2 =  6
+		      \end{aligned}
+	      $
+
+	\item
+	      $
+		      \begin{aligned}[t]
+			      f(x_1,x_2,x_3)                      & = x_1^2 \cdot x_2^2 \cdot x_3                           \\
+			      \frac{\partial^2 f}{\partial x^2_1} & = 2 \cdot x_2^2 \cdot x_3                               \\
+			      \frac{\partial^2 f}{\partial x^2_2} & = 2 \cdot x_1^2 \cdot x_3                               \\
+			      \frac{\partial^2 f}{\partial x^2_3} & = 0                                                     \\
+			      \nabla ^ 2 f                        & = 2 \cdot x_2^2 \cdot x_3 + 2 \cdot x_1^2 \cdot x_3 + 0
+		      \end{aligned}
+	      $
+\end{enumerate}
