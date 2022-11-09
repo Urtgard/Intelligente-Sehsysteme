@@ -95,7 +95,7 @@ public class LaplaceFilter_HW_JK_BK extends AbstractFilter {
                 double value = calculateConvolution(input, kernel, x, y);
 
                 List<Double> shifts = new ArrayList<>();
-                shifts.add(calculateConvolution(input, kernel, x - 1, y));
+                shifts.add(calculateConvolution(input, kernel, x + 1, y));
                 shifts.add(calculateConvolution(input, kernel, x, y + 1));
                 if (operator == "L8") {
                     shifts.add(calculateConvolution(input, kernel, x - 1, y + 1));
