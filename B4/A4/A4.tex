@@ -1,0 +1,116 @@
+\section{Tensorberechnung fur anisotropes inhomogenes Diffusionsfilter}
+\begin{enumerate}
+	\setlength\itemsep{2em}
+	\item $\begin{aligned}[t]
+			      \begin{pmatrix}
+				      e_{1,1} \\
+				      e_{1,2}
+			      \end{pmatrix} & = \frac{\nabla u}{\| \nabla u \|}                             \\
+			      \begin{pmatrix}
+				      e_{2,1} \\
+				      e_{2,2}
+			      \end{pmatrix} & =
+			      \begin{pmatrix}
+				      e_{1,2} \\
+				      -e_{1,1}
+			      \end{pmatrix}                                                                \\
+			      \lambda_1       & = \epsilon_0 \frac{\lambda^2}{\| \nabla u \|^2 + \lambda^2} \\
+			      \lambda_2       & = 1                                                         \\
+			      \nabla u (x,y)  & \approx \begin{pmatrix}
+				                                I(x+1,y)-I(x-1,y) \\
+				                                I(x,y+1)-I(x,y-1)
+			                                \end{pmatrix}
+		      \end{aligned}$\\
+
+	      Für $ x,y =3 $ gilt:\\
+	      $\begin{aligned}
+			      \nabla u (3,3)      & \approx \begin{pmatrix}
+				                                    I(4,3)-I(2,3) \\
+				                                    I(3,4)-I(3,2)
+			                                    \end{pmatrix}
+			      = \begin{pmatrix}
+				        10 \\
+				        10
+			        \end{pmatrix}                                                                               \\
+			      \| \nabla u(3,3) \| & =\sqrt{10^2+10^2}=10\sqrt{2}                                             \\
+			      \begin{pmatrix}
+				      e_{1,1} \\
+				      e_{1,2}
+			      \end{pmatrix}     & = \frac{1}{10\sqrt{2}}  \begin{pmatrix}
+				                                                  10 \\
+				                                                  10
+			                                                  \end{pmatrix} = \frac{1}{\sqrt{2}}  \begin{pmatrix}
+				                                                                                      1 \\
+				                                                                                      1
+			                                                                                      \end{pmatrix} \\
+			      \begin{pmatrix}
+				      e_{2,1} \\
+				      e_{2,2}
+			      \end{pmatrix}     & =
+			      \frac{1}{\sqrt{2}}  \begin{pmatrix}
+				                          1 \\
+				                          -1
+			                          \end{pmatrix}                                                             \\
+			      \lambda_1           & = \epsilon_0 \frac{\lambda^2}{200 + \lambda^2}                           \\
+			                          & \text{mit } \epsilon_0=\lambda=1                                         \\
+			      \lambda_1           & = \frac{1}{201}                                                          \\
+			      \lambda_2           & = 1
+		      \end{aligned}$\\
+	      \newpage
+	\item  $\begin{aligned}[t]
+			      \mathbf{D} & =
+			      \begin{pmatrix}
+				      e_{1,1} & e_{2,1} \\
+				      e_{1,2} & e_{2,2}
+			      \end{pmatrix}
+			      \begin{pmatrix}
+				      \lambda_1 & 0         \\
+				      0         & \lambda_2
+			      \end{pmatrix}
+			      \begin{pmatrix}
+				      e_{1,1} & e_{1,2} \\
+				      e_{2,1} & e_{2,2}
+			      \end{pmatrix}                             \\
+			                 & =
+			      \left(
+			      \frac{1}{\sqrt{2}}
+			      \begin{pmatrix}
+				      1 & 1  \\
+				      1 & -1
+			      \end{pmatrix}
+			      \right)
+			      \begin{pmatrix}
+				      \frac{1}{201} & 0 \\
+				      0             & 1
+			      \end{pmatrix}
+			      \left(
+			      \frac{1}{\sqrt{2}}
+			      \begin{pmatrix}
+				      1 & 1  \\
+				      1 & -1
+			      \end{pmatrix}
+			      \right)                                       \\
+			                 & =
+			      \left(
+			      \frac{1}{\sqrt{2}}
+			      \begin{pmatrix}
+				      1 & 1  \\
+				      1 & -1
+			      \end{pmatrix}
+			      \right)
+			      \left(
+			      \frac{1}{\sqrt{2}}
+			      \begin{pmatrix}
+				      \frac{1}{201} & 0  \\
+				      0             & -1
+			      \end{pmatrix}
+			      \right)
+			      \\
+			                 & =    \begin{pmatrix}
+				                        \frac{1}{402} & 0           \\
+				                        0             & \frac{1}{2}
+			                        \end{pmatrix}
+		      \end{aligned}$
+
+	\item $ \mathbf{D}$ ist positiv definit, da für alle Eigenvektoren $\lambda_1, \lambda_2 > 0$ gilt.
+\end{enumerate}
