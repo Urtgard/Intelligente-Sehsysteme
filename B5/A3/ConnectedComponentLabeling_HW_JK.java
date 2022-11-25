@@ -3,6 +3,7 @@ import itb2.filter.RequireImageType;
 import itb2.image.GrayscaleImage;
 import itb2.image.Image;
 import itb2.image.ImageFactory;
+import itb2.image.RgbImage;
 
 import java.util.*;
 
@@ -54,10 +55,8 @@ public class ConnectedComponentLabeling_HW_JK extends AbstractFilter {
 
     @Override
     public Image filter(Image input) {
-
         //ausgabebild hat genauigkeit und größe des eingabebildes
-        Image output = ImageFactory.getPrecision(input).rgb(input.getSize());
-
+        RgbImage output = ImageFactory.getPrecision(input).rgb(input.getSize());
         var label = 0;
         var equivalences = new ArrayList<ArrayList<Integer>>();
         equivalences.add(new ArrayList<>(List.of(label)));
