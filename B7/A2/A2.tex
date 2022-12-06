@@ -1,0 +1,31 @@
+\setcounter{section}{1}
+\section{Korrespondierende Kosinus-Funktionen}
+Für zwei an $N$ Orten abgetastete Funktionen $\cos(u_1\cdot n)$
+und $\cos(u_2\cdot n)$ mit $ \frac{u_1}{u_0} = N - \frac{u_2}{u_0}$,
+gilt: $\cos(u_1\cdot n)=\cos(u_2\cdot n)$ \\
+
+\begin{equation}
+	\label{cos1}
+	\forall n \in \mathbb{Z}: \cos(x + 2\pi n) = \cos(x)
+\end{equation}
+\begin{equation}
+	\label{cos2}
+	\cos(-x ) = \cos(x)
+\end{equation} \\
+\begin{equation}
+	\label{u1}
+	\begin{alignedat}{3}
+		& \frac{u_1}{u_0} & = & N - \frac{u_2}{u_0} \\
+		\iff                                   & u_1             & = & N \cdot u_0 - u_2   \\
+		\stackrel{u_0 = \frac{2 \pi}{N}}{\iff} & u_1             & = & 2\pi - u_2          \\
+	\end{alignedat}
+\end{equation} \\
+
+\begin{equation}
+	\begin{aligned}
+		                                  & \cos(u_1\cdot n)            \\
+		\stackrel{\text{(\ref{u1})}}{=}   & \cos(2\pi  n - u_2 \cdot n) \\
+		\stackrel{\text{(\ref{cos1})}}{=} & \cos( - u_2 \cdot n)        \\
+		\stackrel{\text{(\ref{cos2})}}{=} & \cos( u_2 \cdot n)          \\
+	\end{aligned}
+\end{equation}
