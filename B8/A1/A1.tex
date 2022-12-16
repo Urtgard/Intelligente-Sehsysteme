@@ -1,0 +1,75 @@
+\section{Harris Corner Detector}
+
+$$
+	\begin{array}{ccc}
+		I_x  = I \ast \begin{pmatrix} -1 & 0 & 1 \end{pmatrix} & \phantom{\quad} & I_y  = I \ast \begin{pmatrix} 1\\  0 \\- 1 \end{pmatrix} \\[24pt]
+		I_x  : \begin{tabular}{|c|ccc|}
+			       \hline
+			       \diagbox{v}{u} & -1 & 0 & 1 \\
+			       \hline
+			       1              & 0  & 0 & 1 \\
+			       0              & -1 & 0 & 1 \\
+			       -1             & 0  & 0 & 0 \\
+			       \hline
+		       \end{tabular}                        &                 & I_y  : \begin{tabular}{|c|ccc|}
+			                                                                       \hline
+			                                                                       \diagbox{v}{u} & -1 & 0  & 1  \\
+			                                                                       \hline
+			                                                                       1              & -1 & 0  & -1 \\
+			                                                                       0              & -1 & -1 & -1 \\
+			                                                                       -1             & 0  & -1 & 0  \\
+			                                                                       \hline
+		                                                                       \end{tabular}
+	\end{array}
+$$\\
+$$
+	\begin{array}{ccccc}
+		I_x^2  = I_x \cdot I_x             & \phantom{\quad} & I_y^2  = I_y \cdot I_y & \phantom{\quad} & I_xI_y  = I_x \cdot I_y \\[4pt]
+		I_x^2  :  \begin{tabular}{|c|ccc|}
+			          \hline
+			          \diagbox{v}{u} & -1 & 0 & 1 \\
+			          \hline
+			          1              & 0  & 0 & 1 \\
+			          0              & 1  & 0 & 1 \\
+			          -1             & 0  & 0 & 0 \\
+			          \hline
+		          \end{tabular} &                 &
+		I_y^2  : \begin{tabular}{|c|ccc|}
+			         \hline
+			         \diagbox{v}{u} & -1 & 0 & 1 \\
+			         \hline
+			         1              & 1  & 0 & 1 \\
+			         0              & 1  & 1 & 1 \\
+			         -1             & 0  & 1 & 0 \\
+			         \hline
+		         \end{tabular}
+		                                   &                 &
+		I_y^2  : \begin{tabular}{|c|ccc|}
+			         \hline
+			         \diagbox{v}{u} & -1 & 0 & 1  \\
+			         \hline
+			         1              & 0  & 0 & -1 \\
+			         0              & 1  & 0 & -1 \\
+			         -1             & 0  & 0 & 0  \\
+			         \hline
+		         \end{tabular}
+	\end{array}
+$$ \\
+\begin{enumerate}
+	\item	$ \langle I_x^2 \rangle  = 3 \quad \langle I_y^2 \rangle  = 6 \quad \langle I_xI_y \rangle  = -1	      $\\
+	\item $ \boldsymbol{A} = \begin{pmatrix}
+			      \langle I_x^2 \rangle  & \langle I_xI_y \rangle \\
+			      \langle I_xI_y \rangle & \langle I_y^2 \rangle
+		      \end{pmatrix} =\begin{pmatrix}
+			      3  & -1 \\
+			      -1 & 6
+		      \end{pmatrix}  $\\
+	\item $
+		      \begin{aligned}[t]
+			      R & = \text{det}(\boldsymbol{A})- \kappa \cdot \text{trace}^2(\boldsymbol{A}) \\
+			        & = 3 \cdot 6  - (-1) \cdot (-1) - 0.1 \cdot \left(3 + 6 \right)^2          \\
+			        & = 18 -1 - 8.1                                                             \\
+			        & =8.9
+		      \end{aligned}
+	      $
+\end{enumerate}
